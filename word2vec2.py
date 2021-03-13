@@ -67,7 +67,7 @@ class word2vec:
                     sp1, sp2 = scorefunction(word_embeddings)
                     print('eporch,batch=%2d %5d: sp=%1.3f %1.3f  pair/sec = %4.2f loss=%4.3f\r' \
                           % (epoch, batch_num, sp1, sp2, (batch_num - batch_new) * self.batch_size / (end - start),
-                             loss.data[0]), end="")
+                             loss.item()), end="")
                     batch_new = batch_num
                     start = time.time()
                 batch_num = batch_num + 1
